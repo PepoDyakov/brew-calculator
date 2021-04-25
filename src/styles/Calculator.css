@@ -1,0 +1,30 @@
+.calculator-screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calculator-input {
+    border: none;
+    outline: none;
+    color: #333333;
+    -moz-appearance: textfield;
+}
+
+.calculator-measurement-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calculator-measurement {
+    padding: 0 12px;
+}
+
+.calculator-input::-webkit-outer-spin-button,
+.calculator-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
