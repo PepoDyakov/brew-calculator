@@ -17,14 +17,14 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
-    &:hover {
-        cursor: pointer;
-    }
 }
 
 .calculator-measurement {
     padding: 0 12px;
+    
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .calculator-input::-webkit-outer-spin-button,

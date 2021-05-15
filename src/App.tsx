@@ -6,7 +6,9 @@ import { Action, appState } from "./types";
 
 const initialState = {
   waterMeasurementType: WaterMeasurementTypes.Grams,
-  coffeeMeasurementType: CoffeeMeasurementTypes.Grams
+  waterAmount: 0,
+  coffeeMeasurementType: CoffeeMeasurementTypes.Grams,
+  coffeeAmount: 0
 } as appState;
 
 const reducer = (state : appState, action : Action) : appState => {
@@ -20,7 +22,17 @@ const reducer = (state : appState, action : Action) : appState => {
       return {
         ...state,
         waterMeasurementType: action.payload
-      }  
+      }
+    case "changeWaterAmount":
+      return {
+        ...state,
+        waterAmount: action.payload
+      }
+    case "changeCoffeeAmount":
+      return {
+        ...state,
+        coffeeAmount: action.payload
+      }
     default:
       throw new Error("Error setting state on measurement type.")
   }
@@ -42,7 +54,8 @@ const App = () => {
           WaterMeasurementTypes.C
         ]}
         selectedMeasurement={state.waterMeasurementType}
-        handleMeasurementChange={dispatch}
+        dispatch={dispatch}
+        value={state.waterAmount}
         calculatorType="water"
       />
       <Calculator 
@@ -56,7 +69,8 @@ const App = () => {
           CoffeeMeasurementTypes.Beans
         ]}
         selectedMeasurement={state.coffeeMeasurementType}
-        handleMeasurementChange={dispatch}
+        dispatch={dispatch}
+        value={state.coffeeAmount}
         calculatorType="coffee"
       />
     </div>
@@ -64,3 +78,4 @@ const App = () => {
 }
 
 export default App;
+

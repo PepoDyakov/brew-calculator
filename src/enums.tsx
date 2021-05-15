@@ -1,7 +1,7 @@
 export enum CoffeeMeasurementTypes {
     Grams = "g",
-    TeaSpoon= "tsp",
-    TableSpoon= "tbsp",
+    TeaSpoon = "tsp",
+    TableSpoon = "tbsp",
     Ounce = "oz",
     Beans = "beans"
 }
