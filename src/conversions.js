@@ -1,4 +1,4 @@
-const coffeeConversionRatios = {
+export const coffeeConversionRatios = {
     g: 1,
     tsp: 0.24,
     tbsp: 14.3,
@@ -6,21 +6,16 @@ const coffeeConversionRatios = {
     beans: 0.1325,
 }
 
-const waterConversionRatios = {
+export const waterConversionRatios = {
     g: 1,
     ml: 1,
     L: 0.01,
-    flOz: 0.033814,
+    "fl.oz": 0.033814,
     C: 64,
 }
 
-export function convertMeasurement(value, valueType, forType) {
-    if (forType === 'coffee') {
-        return value * coffeeConversionRatios[valueType]
-    } else if (forType === 'water') {
-        return value * waterConversionRatios[valueType]
-    } else {
-        console.error('Failure in conversion.')
-        return 0.0
-    }
+export function convertMeasurement(value, prevRatio, ratio) {
+    let gramValue = parseFloat(value) / parseFloat(prevRatio);
+    let finalValue = parseFloat(gramValue) * parseFloat(ratio);
+    return parseFloat(finalValue.toPrecision(3));
 }

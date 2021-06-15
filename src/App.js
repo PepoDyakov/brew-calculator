@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react'
 import Calculator from './components/Calculator'
+import { convertMeasurement, coffeeConversionRatios, waterConversionRatios } from "./conversions";
 
 const Coffee = {
     g: 'g',
@@ -33,20 +34,37 @@ const initialState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case 'changeWaterType':
-            return {
-                ...state,
-                water: {
-                    ...state.water,
-                    type: action.payload,
-                },
+            if(action.payload !== state.water.type) { 
+                console.log(state.water.amount, waterConversionRatios[state.water.type], waterConversionRatios[action.payload])
+                let convertedWaterAmount = convertMeasurement(state.water.amount, waterConversionRatios[state.water.type], waterConversionRatios[action.payload]);
+                return {
+                    ...state,
+                    water: {
+                        ...state.water,
+                        amount: convertedWaterAmount,
+                        type: action.payload,
+                    },
+                }
+            } else {
+                return { 
+                    ...state
+                }
             }
         case 'changeCoffeeType':
-            return {
-                ...state,
-                coffee: {
-                    ...state.coffee,
-                    type: action.payload,
-                },
+            if(action.payload !== state.coffee.type) {
+                let convertedCoffeeAmount = convertMeasurement(state.coffee.amount, coffeeConversionRatios[state.coffee.type],coffeeConversionRatios[action.payload]);
+                return {
+                    ...state,
+                    coffee: {
+                        ...state.coffee,
+                        amount: convertedCoffeeAmount,
+                        type: action.payload,
+                    },
+                }
+            } else  {
+                return { 
+                    ...state
+                }
             }
         case 'changeWaterAmount':
             return {
