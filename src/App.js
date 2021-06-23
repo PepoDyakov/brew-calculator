@@ -96,7 +96,7 @@ const App = () => {
             <Calculator
                 state={state.coffee}
                 dispatch={dispatch}
-                name="coffee"
+                name="test"
             />
         </div>
     )
