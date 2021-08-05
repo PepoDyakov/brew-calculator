@@ -58,3 +58,7 @@ export function convertMeasurement(value, prevRatio, ratio) {
 export function calculcateCoffeAmount(coffeeAmount, coffeeConversionRatio, brewTypeConversionRatio) {
     return parseFloat((coffeeAmount * coffeeAmount))
 }
+
+export function calculateAmount(one, another, ratio) {
+    
+}
