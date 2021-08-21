@@ -1,22 +1,22 @@
 import React from "react";
-import "../styles/Calculator.scss";
+import "../styles/Calculator.css";
 
-const handleMeasurementSelect = (event, dispatch) => {
+const handleMeasurementSelect = (event, calculatorType, dispatch) => {
   let newType = event.target.getAttribute("data-measurement");
-  let name = event.target.title;
 
   dispatch({
-    type: name === "coffee" ? "changeCoffeeType" : "changeWaterType",
+    type: "changeMeasurement",
+    calculatorType: calculatorType,
     payload: newType,
   });
 };
 
-const handleInputChange = (amount, type, dispatch) => {
+const handleInputChange = (amount, calculatorType, dispatch) => {
   const re = /^-?\d*[.,]?\d*$/;
   if (amount === "" || re.test(amount)) {
     dispatch({
       type: "changeAmount",
-      calculatorType: type,
+      calculatorType: calculatorType,
       payload: amount,
     });
   }
@@ -29,12 +29,11 @@ const Calculator = (props) => {
       <h3 className="calculator-name">{name}</h3>
       <div className="calculator-screen">
         <input
-          type="number"
           className="calculator-input"
           onChange={(e) => handleInputChange(e.target.value, name, dispatch)}
           value={state.amount}
         />
-        <p className="calculator-measurement-type">{type}</p>
+        <p className="calculator-measurement-type">{state.type}</p>
       </div>
       <div className="calculator-measurement-select">
         {state.availableTypes.map((type) => {
@@ -43,7 +42,7 @@ const Calculator = (props) => {
               className="calculator-measurement"
               key={type}
               data-measurement={type}
-              onClick={(e) => console.log(e.target.value)}
+              onClick={(e) => handleMeasurementSelect(e, name, dispatch)}
               title={props.name}
             >
               {type}

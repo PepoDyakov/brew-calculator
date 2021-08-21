@@ -1,0 +1,142 @@
+:root {
+  --main-bg-gradient: linear-gradient(180deg, #ffffff 0%, #fff4ed 100%);
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: var(--main-bg-gradient);
+  position: relative;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  width: 820px;
+  margin: auto;
+}
+
+.header-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.logo {
+  width: 85px;
+  height: 85px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.page-link {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.page-link,
+.page-link:visited {
+  text-decoration: none;
+  color: #000000;
+}
+
+.page-link:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 47px;
+  font-weight: 700;
+}
+
+.brew-type-select-wrapper {
+  position: relative;
+  margin-left: auto;
+}
+
+.brew-type-select-wrapper:hover {
+  cursor: pointer;
+}
+
+.brew-type-select {
+  width: 295px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 8px;
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.brew-type-select:hover {
+  cursor: pointer;
+}
+
+.brew-type-select::-ms-expand {
+  display: none;
+}
+
+.brew-type-option {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.down-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+}
+
+.calculator-background {
+  background: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.0790811),
+    0px 15px 25px rgba(0, 0, 0, 0.13325);
+  border-radius: 16px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #979797;
+  opacity: 0.2;
+}
+
+.footer-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 64px;
+}
+
+.footer-copy {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.footer-copy:last-child {
+  margin-left: auto;
+}

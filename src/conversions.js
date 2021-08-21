@@ -1,17 +1,17 @@
 export const coffeeConversionRatios = {
-    g: 1,
-    tsp: 0.24,
-    tbsp: 14.3,
-    oz: 0.035274,
-    beans: 0.1325,
+    "g": 1,
+    "tsp": 0.24,
+    "tbsp": 14.3,
+    "oz": 0.035274,
+    "beans": 0.1325,
 }
 
 export const waterConversionRatios = {
-    g: 1,
-    ml: 1,
-    L: 0.01,
+    "g": 1,
+    "ml": 1,
+    "L": 0.01,
     "fl.oz": 0.033814,
-    C: 64,
+    "C": 64,
 }
 
 export const brewTypes = [
@@ -49,16 +49,22 @@ export const brewTypes = [
     }
 ]
 
-export function convertMeasurement(value, prevRatio, ratio) {
-    let gramValue = parseFloat(value) / parseFloat(prevRatio);
-    let finalValue = parseFloat(gramValue) * parseFloat(ratio);
+export function convertMeasurement(value, prevRatio, ratio, isWater = true) {
+    let prevRatioValue = isWater ? waterConversionRatios[prevRatio] : coffeeConversionRatios[prevRatio];
+    let ratioValue = isWater ? waterConversionRatios[ratio] : coffeeConversionRatios[ratio];
+    let gramValue = parseFloat(value) / parseFloat(prevRatioValue);
+    let finalValue = parseFloat(gramValue) * parseFloat(ratioValue);
     return parseFloat(finalValue.toPrecision(3));
 }
 
-export function calculcateCoffeAmount(coffeeAmount, coffeeConversionRatio, brewTypeConversionRatio) {
-    return parseFloat((coffeeAmount * coffeeAmount))
-}
+export function calculateAmount(amount, ratio, isDivide = false) {
+    if(amount.length === 0) {
+        return "0";
+    }
 
-export function calculateAmount(one, another, ratio) {
-    
+    if(isDivide) {
+        return parseFloat(parseFloat(amount) / parseFloat(ratio)).toString();
+    } else {
+        return parseFloat(parseFloat(amount) * parseFloat(ratio)).toString();
+    }
 }
