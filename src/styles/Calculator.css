@@ -1,8 +1,10 @@
 .calculator-body {
+  width: 820px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 48px;
+  box-sizing: border-box;
 }
 
 .calculator-screen {
@@ -21,6 +23,15 @@
   outline: none;
   color: #333333;
   -moz-appearance: textfield;
+  font-size: 56px;
+  line-height: 66px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.calculator-input::placeholder {
+  color: #333333;
+  opacity: 0.3;
 }
 
 .calculator-measurement-type {
@@ -28,10 +39,26 @@
   line-height: 47px;
   font-weight: 700;
   color: #ff6300;
+  margin-left: 10px;
 }
 
 .calculator-name {
   text-transform: capitalize;
+}
+
+.measurement-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.measurement-background {
+  width: 44px;
+  height: 44px;
+  background-color: #fecfb1;
+  border-radius: 25px;
+  position: absolute;
+  left: -5px;
+  top: calc(50% - 22px);
 }
 
 .calculator-measurement-select {
@@ -45,8 +72,14 @@
 .calculator-measurement {
   padding: 0 12px;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 18px;
   color: #333333;
+  z-index: 2;
+}
+
+.calculator-measurement-active {
+  color: #ff6300;
+  font-weight: 700;
 }
 
 .calculator-measurement:last-child {
@@ -61,4 +94,15 @@
 .calculator-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+@keyframes slideToSide {
+  50% {
+    width: 88px;
+  }
+
+  100% {
+    width: 44px;
+    transform: translateX(25%);
+  }
 }
