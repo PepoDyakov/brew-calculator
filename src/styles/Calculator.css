@@ -61,6 +61,12 @@
   top: calc(50% - 22px);
 }
 
+.measurement-background-2 {
+  animation-name: secondPosition;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .calculator-measurement-select {
   width: 100%;
   display: flex;
@@ -96,13 +102,56 @@
   margin: 0;
 }
 
-@keyframes slideToSide {
+@keyframes firstPosition {
   50% {
     width: 88px;
   }
 
   100% {
     width: 44px;
-    transform: translateX(25%);
+    left: 0;
+  }
+}
+
+@keyframes secondPosition {
+  50% {
+    width: 88px;
+  }
+
+  100% {
+    width: 44px;
+    left: calc(25% - 22px);
+  }
+}
+
+@keyframes thirdPosition {
+  50% {
+    width: 88px;
+  }
+
+  100% {
+    width: 44px;
+    left: calc(50% - 22px);
+  }
+}
+
+@keyframes fourthPostion {
+  50% {
+    width: 88px;
+  }
+
+  100% {
+    width: 44px;
+    left: calc(75% - 22px);
+  }
+}
+@keyframes fifthPostion {
+  50% {
+    width: 88px;
+  }
+
+  100% {
+    width: 44px;
+    left: calc(100% - 22px);
   }
 }

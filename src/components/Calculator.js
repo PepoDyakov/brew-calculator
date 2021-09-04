@@ -40,7 +40,7 @@ const Calculator = (props) => {
       </div>
       <div className="measurement-wrapper">
         <div
-          className={`measurement-background measurement-background-${state.type}}`}
+          className={`measurement-background measurement-background-2`}
         ></div>
         <div className="calculator-measurement-select">
           {state.availableTypes.map((type) => {
