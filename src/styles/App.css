@@ -23,8 +23,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 64px;
-  margin-bottom: 64px;
+  margin: 64px 0;
 }
 
 .logo {
@@ -140,4 +139,46 @@
 
 .footer-copy:last-child {
   margin-left: auto;
+}
+
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 400px) {
+  .main-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .header-wrapper {
+    margin: 32px 0;
+  }
+  
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+  
+  .title {
+    display: none;
+  }
+
+  .brew-type-select-wrapper {
+    width: 100%;
+    margin: 0;
+  }
+
+  .brew-type-select {
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .calculator-background {
+    margin-bottom: 0;
+  }
+
+  .footer-wrapper {
+    margin: 32px 0;
+  }
 }

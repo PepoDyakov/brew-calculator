@@ -51,22 +51,6 @@
   position: relative;
 }
 
-.measurement-background {
-  width: 44px;
-  height: 44px;
-  background-color: #fecfb1;
-  border-radius: 25px;
-  position: absolute;
-  left: -5px;
-  top: calc(50% - 22px);
-}
-
-.measurement-background-2 {
-  animation-name: secondPosition;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-}
-
 .calculator-measurement-select {
   width: 100%;
   display: flex;
@@ -76,16 +60,45 @@
 }
 
 .calculator-measurement {
-  padding: 0 12px;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  font-size: 16px;  
   line-height: 18px;
   color: #333333;
   z-index: 2;
+  position: relative;
 }
 
 .calculator-measurement-active {
   color: #ff6300;
   font-weight: 700;
+}
+
+.calculator-measurement-background {
+  width: 100%;
+  height: 100%;
+  background-color: #FECFB1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 22px;
+  transform: scale(0, 0);
+  -moz-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  transition: all .1s ease-in;
+}
+
+.calculator-measurement-background-active {
+  transform: scale(100%, 100%);
+  -moz-transform: scale(100%, 100%);
+  -webkit-transform: scale(100%, 100%);
+  -o-transform: scale(100%, 100%);
+  transition: all .1s ease-in;
 }
 
 .calculator-measurement:last-child {
@@ -102,56 +115,20 @@
   margin: 0;
 }
 
-@keyframes firstPosition {
-  50% {
-    width: 88px;
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 400px) {
+  .calculator-body {
+    width: 100%;
+    padding: 24px 16px;
   }
 
-  100% {
-    width: 44px;
-    left: 0;
-  }
-}
-
-@keyframes secondPosition {
-  50% {
-    width: 88px;
+  .calculator-screen {
+    margin: 22px 0;
   }
 
-  100% {
-    width: 44px;
-    left: calc(25% - 22px);
-  }
-}
-
-@keyframes thirdPosition {
-  50% {
-    width: 88px;
-  }
-
-  100% {
-    width: 44px;
-    left: calc(50% - 22px);
-  }
-}
-
-@keyframes fourthPostion {
-  50% {
-    width: 88px;
-  }
-
-  100% {
-    width: 44px;
-    left: calc(75% - 22px);
-  }
-}
-@keyframes fifthPostion {
-  50% {
-    width: 88px;
-  }
-
-  100% {
-    width: 44px;
-    left: calc(100% - 22px);
+  .calculator-measurement {
+    font-size: 15px;
+    line-height: 18px;
   }
 }
