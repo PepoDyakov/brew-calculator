@@ -8,8 +8,6 @@ export const pagesMapping = {
 export const RoutingContext = createContext({ page: pagesMapping.home });
 
 export default function FancyAFRouter({ children }) {
-  let urlPath = window.location.pathname.slice(16).toLowerCase();
-
   const [page, setPage] = useState(pagesMapping.home);
 
   const value = useMemo(() => ({ page, setPage }), [page, setPage]);
