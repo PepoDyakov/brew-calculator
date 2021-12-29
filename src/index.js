@@ -1,11 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.module.css";
+import App from "./App";
+import FancyAFRouter from "./routing";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FancyAFRouter>
+      <App />
+    </FancyAFRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

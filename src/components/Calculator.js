@@ -1,5 +1,6 @@
 import React from "react";
-import "../styles/Calculator.css";
+
+import styles from "../styles/Calculator.module.css";
 
 const handleMeasurementSelect = (event, calculatorType, dispatch) => {
   let newType = event.target.getAttribute("data-measurement");
@@ -24,31 +25,39 @@ const handleInputChange = (amount, calculatorType, dispatch) => {
 
 const Calculator = (props) => {
   const { state, dispatch, name } = props;
-  console.log(state.amount.length);
+
   return (
-    <div className="calculator-body">
-      <h3 className="calculator-name">{name}</h3>
-      <div className="calculator-screen">
+    <div className={styles.calculatorBody}>
+      <h3 className={styles.calculatorName}>{name}</h3>
+      <div className={styles.calculatorScreen}>
         <input
-          className="calculator-input"
+          className={styles.calculatorInput}
           placeholder="0.00"
           maxLength={4}
           onChange={(e) => handleInputChange(e.target.value, name, dispatch)}
           value={state.amount}
         />
-        <p className="calculator-measurement-type">{state.type}</p>
+        <p className={styles.calculatorMeasurementType}>{state.type}</p>
       </div>
-      <div className="measurement-wrapper">
+      <div className={styles.measurementWrapper}>
         <div
-          className={`measurement-background measurement-background-${state.type}}`}
+          className={[
+            styles.measurementBackground,
+            `${styles.measurementBackground}${state.type}`,
+          ]}
         ></div>
-        <div className="calculator-measurement-select">
+        <div className={styles.calculatorMeasurementSelect}>
           {state.availableTypes.map((type) => {
             return (
               <p
-                className={`calculator-measurement ${
-                  state.type === type ? "calculator-measurement-active" : ""
-                }`}
+                className={[
+                  styles.calculatorMeasurement,
+                  `${
+                    state.type === type
+                      ? styles.calculatorMeasurementActive
+                      : ""
+                  }`,
+                ]}
                 key={type}
                 data-measurement={type}
                 onClick={(e) => handleMeasurementSelect(e, name, dispatch)}
