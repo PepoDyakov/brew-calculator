@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Logo from "./assets/logo.png";
 import About from "./pages/About";
 import Home from "./pages/Home";
@@ -8,6 +8,10 @@ import styles from "./styles/App.module.css";
 
 const App = () => {
   const { page, setPage } = useContext(RoutingContext);
+
+  useEffect(() => {
+    setPage(pagesMapping.home);
+  });
 
   return (
     <div className={styles.app}>
