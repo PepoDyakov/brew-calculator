@@ -75,6 +75,7 @@
   line-height: 18px;
   color: #333333;
   z-index: 2;
+  position: relative;
 }
 
 .calculatorMeasurementActive {
@@ -96,13 +97,20 @@
   margin: 0;
 }
 
-@keyframes slideToSide {
-  50% {
-    width: 88px;
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 400px) {
+  .calculator-body {
+    width: 100%;
+    padding: 24px 16px;
   }
 
-  100% {
-    width: 44px;
-    transform: translateX(25%);
+  .calculator-screen {
+    margin: 22px 0;
+  }
+
+  .calculator-measurement {
+    font-size: 15px;
+    line-height: 18px;
   }
 }

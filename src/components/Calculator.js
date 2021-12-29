@@ -25,7 +25,6 @@ const handleInputChange = (amount, calculatorType, dispatch) => {
 
 const Calculator = (props) => {
   const { state, dispatch, name } = props;
-
   return (
     <div className={styles.calculatorBody}>
       <h3 className={styles.calculatorName}>{name}</h3>
@@ -63,8 +62,11 @@ const Calculator = (props) => {
                 onClick={(e) => handleMeasurementSelect(e, name, dispatch)}
                 title={props.name}
               >
+                <div className={`calculator-measurement-background ${
+                  state.type === type ? "calculator-measurement-background-active" : ""
+                }`}></div>
                 {type}
-              </p>
+              </div>
             );
           })}
         </div>
