@@ -62,11 +62,15 @@ const Calculator = (props) => {
                 onClick={(e) => handleMeasurementSelect(e, name, dispatch)}
                 title={props.name}
               >
-                <div className={`calculator-measurement-background ${
-                  state.type === type ? "calculator-measurement-background-active" : ""
-                }`}></div>
+                <div
+                  className={`calculator-measurement-background ${
+                    state.type === type
+                      ? "calculator-measurement-background-active"
+                      : ""
+                  }`}
+                ></div>
                 {type}
-              </div>
+              </p>
             );
           })}
         </div>
