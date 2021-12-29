@@ -8,7 +8,7 @@ export const pagesMapping = {
 export const RoutingContext = createContext({ page: pagesMapping.home });
 
 export default function FancyAFRouter({ children }) {
-  let urlPath = window.location.pathname.slice(1).toLowerCase();
+  let urlPath = window.location.pathname.slice(16).toLowerCase();
 
   const [page, setPage] = useState(urlPath || pagesMapping.home);
 
