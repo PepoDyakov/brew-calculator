@@ -78,7 +78,8 @@ const reducer = (state, action) => {
             ...state.coffee,
             amount: calculateAmount(
               action.payload,
-              state.brewType.conversionRatio
+              state.brewType.conversionRatio,
+              true
             ),
           },
         };
@@ -89,8 +90,7 @@ const reducer = (state, action) => {
             ...state.water,
             amount: calculateAmount(
               action.payload,
-              state.brewType.conversionRatio,
-              true
+              state.brewType.conversionRatio
             ),
           },
           coffee: {
@@ -106,7 +106,8 @@ const reducer = (state, action) => {
           ...state.coffee,
           amount: calculateAmount(
             state.water.amount,
-            action.payload.conversionRatio
+            action.payload.conversionRatio,
+            true
           ),
         },
         brewType: action.payload,

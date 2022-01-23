@@ -1,15 +1,15 @@
 export const coffeeConversionRatios = {
   g: 1,
-  tsp: 0.24,
-  tbsp: 14.3,
+  tsp: 0.142857,
+  tbsp: 0.06993,
   oz: 0.035274,
-  bns: 0.1325,
+  bns: 7.547169,
 };
 
 export const waterConversionRatios = {
   g: 1,
   ml: 1,
-  L: 0.01,
+  L: 0.001,
   "fl.oz": 0.033814,
   C: 64,
 };
