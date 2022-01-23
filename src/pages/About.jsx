@@ -1,4 +1,3 @@
-import React from "react";
 import BrewculatorImage from "../assets/brewculatorImage.png";
 
 import styles from "../styles/About.module.css";

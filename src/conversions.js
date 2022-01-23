@@ -3,7 +3,7 @@ export const coffeeConversionRatios = {
   tsp: 0.24,
   tbsp: 14.3,
   oz: 0.035274,
-  beans: 0.1325,
+  bns: 0.1325,
 };
 
 export const waterConversionRatios = {

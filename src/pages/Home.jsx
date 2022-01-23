@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import Calculator from "../components/Calculator";
 import { convertMeasurement, brewTypes, calculateAmount } from "../conversions";
 import DownArrow from "../assets/down-arrow.svg";
@@ -10,7 +10,7 @@ const Coffee = {
   tsp: "tsp",
   tbsp: "tbsp",
   oz: "oz",
-  beans: "beans",
+  bns: "bns",
 };
 
 const Water = {
