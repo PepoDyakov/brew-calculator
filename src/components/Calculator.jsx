@@ -1,4 +1,4 @@
-import { classNames } from "classnames";
+import classNames from "classnames";
 import { useSpring, animated } from "@react-spring/web";
 
 import styles from "../styles/Calculator.module.css";
